@@ -1,6 +1,7 @@
 import React from "react";
 import MyMessage from "./MyMessage";
 import TheirMessage from "./TheirMessage";
+import MessageForm from "./MessageForm";
 
 export default function ChatFeed(props) {
   console.log(props);
@@ -31,10 +32,31 @@ export default function ChatFeed(props) {
               />
             )}
           </div>
+
+          <div
+            className="read-reciepts"
+            style={{
+              marginRight: isMyMessage ? "18px" : "0px",
+              marginLeft: isMyMessage ? "0px" : "68px",
+            }}
+          ></div>
         </div>
       );
     });
   };
 
-  return <div>{}</div>;
+  return (
+    <div className="chat-feed">
+      <div className="chat-title-container">
+        <div className="chat-title">{chat?.title}</div>
+        <div className="chat-subtitle"></div>
+        {renderMessages()}
+        <div style={{ height: "100px" }} />
+        <div className="message-form-container">
+          {/* sending new prop , presenting the active chat: */}
+          <MessageForm {...props} chatId={activeChat} />
+        </div>
+      </div>
+    </div>
+  );
 }
