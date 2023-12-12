@@ -1,5 +1,6 @@
 import "./App.css";
 import { ChatEngine } from "react-chat-engine";
+import ChatFeed from "./components/ChatFeed";
 
 function App() {
   return (
@@ -11,12 +12,12 @@ function App() {
         userName="eli"
         // userSecret={localStorage.getItem("password")}
         userSecret="12"
-        // renderChatFeed={(chatAppProps) => <ChatFeed {...chatAppProps} />}
-        // onNewMessage={() =>
-        //   new Audio(
-        //     "https://chat-engine-assets.s3.amazonaws.com/click.mp3"
-        //   ).play()
-        // }
+        renderChatFeed={(chatAppProps) => <ChatFeed {...chatAppProps} />}
+        onNewMessage={() =>
+          new Audio(
+            "https://chat-engine-assets.s3.amazonaws.com/click.mp3"
+          ).play()
+        }
       />
     </div>
   );
