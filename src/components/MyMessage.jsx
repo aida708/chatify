@@ -1,17 +1,15 @@
-import React from "react";
-
-function MyMessage({ message }) {
-  if (message.attachements && message.attachements.length > 0) {
-    // costumized html tag called props:
+const MyMessage = ({ message }) => {
+  if (message.attachments && message.attachments.length > 0) {
     return (
       <img
-        src={message.attachements[0].file}
-        alt="message-attach"
+        src={message.attachments[0].file}
+        alt="message-attachment"
         className="message-image"
         style={{ float: "right" }}
       />
     );
   }
+
   return (
     <div
       className="message"
@@ -25,6 +23,6 @@ function MyMessage({ message }) {
       {message.text}
     </div>
   );
-}
+};
 
 export default MyMessage;

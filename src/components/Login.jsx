@@ -35,7 +35,7 @@ const Login = () => {
   return (
     <div className="wrapper">
       <div className="form">
-        <h1 className="title">CHATIFY</h1>
+        <h1 className="title">CHATIFY APP</h1>
         <form onSubmit={handleSubmit}>
           <input
             type="text"
