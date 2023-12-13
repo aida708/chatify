@@ -11,10 +11,10 @@ function App() {
       <ChatEngine
         height="100vh"
         projectID="a8669f38-21c0-4141-8951-51cfbc406f06"
-        // userName={localStorage.getItem("username")}
-        userName="eli"
-        // userSecret={localStorage.getItem("password")}
-        userSecret="12"
+        userName={localStorage.getItem("username")}
+        // userName="eli"
+        userSecret={localStorage.getItem("password")}
+        // userSecret="12"
         renderChatFeed={(chatAppProps) => <ChatFeed {...chatAppProps} />}
         onNewMessage={() =>
           new Audio(

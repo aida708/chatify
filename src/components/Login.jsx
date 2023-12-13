@@ -18,24 +18,24 @@ const Login = () => {
     };
 
     try {
-      //i will store the username and passw in the local storage instead of creating a db in MongoDB repo.
-      await axios.get("https://api.chatengner.io/chats", {
+      await axios.get("https://api.chatengine.io/chats", {
         headers: authObject,
       });
+
       localStorage.setItem("username", username);
       localStorage.setItem("password", password);
 
       window.location.reload();
       setError("");
-    } catch (error) {
-      setError("Ooops, incorrect credentials");
+    } catch (err) {
+      setError("Oops, incorrect credentials.");
     }
   };
 
   return (
     <div className="wrapper">
       <div className="form">
-        <h1 className="title">Chat Application</h1>
+        <h1 className="title">CHATIFY</h1>
         <form onSubmit={handleSubmit}>
           <input
             type="text"
